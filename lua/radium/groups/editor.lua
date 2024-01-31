@@ -1,0 +1,47 @@
+local C = require("radium.colors")
+
+return function(opts)
+  local background = opts.transparent and C.none or C.main
+
+  return {
+    ColorColumn = { bg = C.line },
+    Conceal = { fg = C.text },
+    CurSearch = { bg = C.line, fg = C.text },
+    CursorLine = { bg = C.line },
+    Directory = { fg = C.blue },
+    DiffAdd = { fg = C.green },
+    DiffChange = { fg = C.yellow },
+    DiffDelete = { fg = C.red },
+    DiffText = { fg = C.yellow },
+    ErrorMsg = { fg = C.red },
+    WinSeparator = { fg = C.line },
+    Folded = { fg = C.subtext },
+    FoldColumn = { fg = C.subtext },
+    SignColumn = { bg = background, fg = C.red },
+    IncSearch = { bg = C.green, fg = C.text },
+    Substitute = { bg = C.cyan, fg = C.text },
+    LineNr = { fg = C.subtext },
+    CursorLineNr = { fg = C.text },
+    CursorLineFold = { bg = background, fg = C.subtext },
+    CursorLineSign = { bg = background },
+    MatchParen = { bg = C.text },
+    ModeMsg = { fg = C.yellow },
+    MsgArea = { fg = C.text },
+    NonText = { fg = C.text },
+    Normal = { bg = opts.transparent and C.none or C.main, fg = C.text },
+    NormalFloat = { bg = C.menu, fg = C.text },
+    FloatBorder = { bg = C.line },
+    FloatTitle = { fg = C.text },
+    NormalNC = { bg = opts.transparent and C.none or C.main, fg = C.text },
+    Pmenu = { bg = C.menu, fg = C.text },
+    PmenuSel = { bg = C.line },
+    PmenuSbar = { bg = C.line },
+    PmenuThumb = { bg = C.menu },
+    Question = { fg = C.text },
+    QuickFixLine = { fg = C.text },
+    StatusLine = { bg = background, fg = C.text },
+    StatusLineNC = { bg = background, fg = C.subtext },
+    Visual = { bg = C.line },
+    WarningMsg = { fg = C.red },
+  }
+end
