@@ -1,7 +1,7 @@
 local editor = require("radium.groups.editor")
 local syntax = require("radium.groups.syntax")
 local terminal = require("radium.groups.terminal")
-local U = require("radium.util")
+local util = require("radium.util")
 
 local M = {
   options = {
@@ -17,16 +17,15 @@ function M.load()
   vim.o.termguicolors = true
   vim.g.colors_name = "radium"
 
-  local theme = vim.tbl_extend("force", editor(M.options), syntax(M.options))
+  local theme = vim.tbl_extend("force", editor(M.options), syntax)
 
-  U.set_global_values(terminal)
-  U.syntax(theme)
+  util.set_global_values(terminal)
+  util.syntax(theme)
 end
 
 function M.setup(opts)
   if opts then
     M.options = opts
-    print(M.options.transparent)
   end
 
   M.load()
